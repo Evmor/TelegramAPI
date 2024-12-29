@@ -1,41 +1,41 @@
 # Описание
 Этот проект представляет собой набор функций на PowerShell для работы с Telegram API. Скрипт позволяет получать обновления, отправлять сообщения, отправлять действия чата, редактировать сообщения и получать файлы из Telegram.
 
-## Установка
+### Установка
 Убедитесь, что у вас установлен PowerShell.
 Скачайте или клонируйте этот репозиторий на ваш компьютер.
 
-### Использование
+## Использование
 
 ## Получение обновлений
 Функция Get-TelegramUpdates позволяет получать обновления из Telegram.
-powershell
+_powershell_
 $updates = Get-TelegramUpdates -BotToken "<Ваш_BotToken>"
 
 ## Отправка сообщения
 Функция Send-Message отправляет сообщение в указанный чат.
-`**powershell**`
+_powershell_
 Send-Message -BotToken "<Ваш_BotToken>" -ChatID "<Идентификатор_чата>" -Message "Ваше сообщение"
 
 ## Отправка действия чата
 Функция Send-ChatAction отправляет действие чата, например, "печатает".
-`**powershell**`
+_powershell_
 Send-ChatAction -BotToken "<Ваш_BotToken>" -ChatID "<Идентификатор_чата>"
 
 ## Отправка клавиатуры
 Функция Send-KeyBoard отправляет клавиатуру с кнопками в Telegram.
-`**powershell**`
+_powershell_
 $buttons = @("Кнопка 1", "Кнопка 2")
 Send-KeyBoard -URL "https://api.telegram.org/bot<Ваш_BotToken>/sendKeyboard" -Buttons $buttons -ChatID "<Идентификатор_чата>" -Message "Выберите опцию."
 
 ## Редактирование сообщения
 Функция Edit-TelegramMessageText редактирует существующее сообщение в Telegram.
-`**powershell**`
+_powershell_
 Edit-TelegramMessageText -BotToken "<Ваш_BotToken>" -ChatID "<Идентификатор_чата>" -MessageID <Идентификатор_сообщения> -Message "Новый текст сообщения"
 
 ## Получение файла
 Функция Get-TelegramFile позволяет получить файл по его идентификатору.
-`**powershell**`
+_powershell_
 Get-TelegramFile -URL "https://api.telegram.org/bot<Ваш_BotToken>/getFile" -FileID "<Идентификатор_файла>" -ScriptPath "<Путь_к_скрипту>"
 
 ### Параметры
